@@ -8,9 +8,9 @@ namespace Bank.Modules
 {
     public class BankAccount
     {
-        public BankAccount()
+        public BankAccount(int blance)
         {
-            
+            Balance = blance;
         }
 
         /// <summary>
