@@ -11,7 +11,7 @@ namespace Bank.Test
         public void 출금_딱_맞을때()
         {
             // arrange
-            int amount = 100;
+            int amount = 200;
             int payment = 100;
             int expected = 0;
             var bankAccount = new BankAccount(amount);
