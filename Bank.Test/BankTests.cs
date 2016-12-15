@@ -24,6 +24,7 @@ namespace Bank.Test
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void 출금_범위가_넘을_때()
         {
             // arrange
@@ -32,19 +33,7 @@ namespace Bank.Test
             var bankAccount = new BankAccount(amount);
 
             // act
-            try
-            {
-                bankAccount.Withdraw(payment);
-                Assert.Fail();
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-
-            }
-            catch (Exception)
-            {
-                Assert.Fail();
-            }
+            bankAccount.Withdraw(payment);
 
             // assert
         }
