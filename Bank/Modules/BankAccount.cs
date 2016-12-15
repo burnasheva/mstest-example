@@ -24,7 +24,7 @@ namespace Bank.Modules
         /// <param name="money">금액</param>
         public void Withdraw(int amount)
         {
-            if (Balance > amount)
+            if (Balance < amount)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount));
             }
