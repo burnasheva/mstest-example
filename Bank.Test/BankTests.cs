@@ -22,5 +22,31 @@ namespace Bank.Test
             // assert
             Assert.AreEqual(expected, bankAccount.Balance, "잔액과 출금액이 같을 때의 처리가 필요합니다.");
         }
+
+        [TestMethod]
+        public void 출금_범위가_넘을_때()
+        {
+            // arrange
+            int amount = 100;
+            int payment = 200;
+            var bankAccount = new BankAccount(amount);
+
+            // act
+            try
+            {
+                bankAccount.Withdraw(payment);
+                Assert.Fail();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
+            catch (Exception)
+            {
+                Assert.Fail();
+            }
+
+            // assert
+        }
     }
 }
